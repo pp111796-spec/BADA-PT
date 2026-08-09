@@ -11,7 +11,6 @@ import YangchonPage from './islands/YangchonPage';
 import YeonmuPage from './islands/YeonmuPage';
 import WavePage from './islands/WavePage';
 import ResultsPage from './islands/ResultsPage';
-import RootPage from './islands/RootPage';
 import LimitationsPage from './islands/LimitationsPage';
 import './IslandContentOverlay.css';
 
@@ -25,7 +24,6 @@ const PAGE_MAP: Record<IslandId, ComponentType> = {
   yeonmu: YeonmuPage,
   wave: WavePage,
   results: ResultsPage,
-  root: RootPage,
   limitations: LimitationsPage,
 };
 

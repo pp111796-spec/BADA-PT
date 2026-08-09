@@ -8,7 +8,6 @@ export type IslandId =
   | 'yeonmu'
   | 'wave'
   | 'results'
-  | 'root'
   | 'limitations';
 
 export interface IslandConfig {
@@ -28,6 +27,5 @@ export const ISLANDS: IslandConfig[] = [
   { id: 'yeonmu', mapPosition: [78.1, 51.9], label: '연무초 프로그램' },
   { id: 'wave', mapPosition: [89.1, 35.3], label: '계룡보건소 프로그램' },
   { id: 'results', mapPosition: [77.0, 19.3], label: '집단 결과 비교 및 통계' },
-  { id: 'root', mapPosition: [68.8, 35.3], label: '기법의 출처' },
-  { id: 'limitations', mapPosition: [62.1, 15.8], label: '한계 및 보완점' },
+  { id: 'limitations', mapPosition: [68.8, 35.3], label: '한계 및 보완점' },
 ];
