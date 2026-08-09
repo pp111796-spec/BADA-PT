@@ -10,7 +10,12 @@ export function getVisitedIslands(): Set<string> {
 }
 
 export function markIslandVisited(id: string): void {
+  if (id === 'board') return; // 익명게시판은 방문 표시하지 않음
   const visited = getVisitedIslands();
   visited.add(id);
   localStorage.setItem(KEY, JSON.stringify([...visited]));
+}
+
+export function clearVisitedIslands(): void {
+  localStorage.removeItem(KEY);
 }

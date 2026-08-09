@@ -4,16 +4,18 @@ import { useSceneStore } from '../../store/useSceneStore';
 import { getVisitedIslands, markIslandVisited } from '../../lib/visitedIslands';
 import './IslandMap.css';
 
-const POP_BASE_DELAY = 0.2;
-const POP_STAGGER = 0.13;
+const POP_BASE_DELAY = 0.05;
+const POP_STAGGER = 0.07;
 
 export default function IslandMap() {
   const selectIsland = useSceneStore((s) => s.selectIsland);
   const [visited, setVisited] = useState<Set<string>>(() => getVisitedIslands());
 
   const handleSelect = (id: IslandId) => {
-    markIslandVisited(id);
-    setVisited((prev) => new Set(prev).add(id));
+    if (id !== 'board') {
+      markIslandVisited(id);
+      setVisited((prev) => new Set(prev).add(id));
+    }
     selectIsland(id);
   };
 

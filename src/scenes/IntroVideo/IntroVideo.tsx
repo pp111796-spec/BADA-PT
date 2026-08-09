@@ -10,7 +10,14 @@ export default function IntroVideo() {
   const [muted, setMuted] = useState(true);
 
   useEffect(() => {
-    fetch('/videos/island-loop.mp4').catch(() => {});
+    // 섬 화면 전환 시 검은 화면 없이 바로 재생되도록 미리 버퍼링해 둔다.
+    // 언마운트 시 제거하지 않음: 전환 시점에 지우면 버퍼가 함께 날아갈 수 있다.
+    const preload = document.createElement('video');
+    preload.src = '/videos/island-loop.mp4';
+    preload.preload = 'auto';
+    preload.muted = true;
+    preload.style.display = 'none';
+    document.body.appendChild(preload);
   }, []);
 
   const toggleSound = () => {
