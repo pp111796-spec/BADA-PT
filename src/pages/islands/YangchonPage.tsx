@@ -9,6 +9,20 @@ interface SessionRow {
   sheet: string;
 }
 
+const SOURCES = [
+  '사회정서역량 5요인 (CASEL, 2020)',
+  '변화과정 6차원 EEMM (Hayes & Hofmann, 2018)',
+  '성격강점 카드 (VIA)',
+  '규칙 내면화·자율성 지지 (Deci & Ryan, 2000)',
+  '구현의도 if-then (Gollwitzer, 1999)',
+  '인지 재구조화 (Beck, 1976)',
+  '인지적 탈융합 (Hayes 등, 2006)',
+  '정서 명명 (Lieberman 등, 2007)',
+  '도움 요청과 호감 (Jecker & Landy, 1969)',
+  '자기효능감·모델링 (Bandura, 1977)',
+  '고통 감내 TIPP (Linehan, 1993)',
+];
+
 const SESSIONS: SessionRow[] = [
   { no: '01', topic: '나를 소개하는 마음 셀럽', competency: '도입·라포', process: '—', technique: '라포 형성, 정서 심리교육 도입(인사이드아웃 매체)', sheet: '나의 셀럽 카드' },
   { no: '02', topic: '강점 찾기 (긍정적 관계 ①)', competency: '긍정적 관계', process: '자기', technique: '성격강점 카드(character strengths)', sheet: '나는 어떤 셀럽 · 강점목록표' },
@@ -92,6 +106,21 @@ export default function YangchonPage() {
                     <b>가정 연계.</b> 회기마다 가정통신문을 보내 그 회기에서 다룬 역량과 집에서
                     이어갈 연습을 안내했다.
                   </span>
+                </div>
+              </>
+            ),
+          },
+          {
+            label: '기법의 출처',
+            content: (
+              <>
+                <p>양촌초 회기에 쓰인 기법들의 임상·이론 근거다.</p>
+                <div className="keyword-chip-row">
+                  {SOURCES.map((s) => (
+                    <span className="keyword-chip" key={s}>
+                      {s}
+                    </span>
+                  ))}
                 </div>
               </>
             ),

@@ -21,6 +21,42 @@ const SESSIONS: SessionRow[] = [
   { no: '10', topic: '나는 빛나는 셀럽 · 종결', competency: '긍정적 관계', process: '인지', activity: '관계 자동사고 재구성, 셀럽 성장 지도, 관계 한 줄 편지, 관계 약속 카드, 사후검사' },
 ];
 
+interface DraftRow {
+  no: number;
+  goal: string;
+  process: string;
+  draft: string;
+  final: string;
+  status: '수정' | '유지';
+}
+
+const DRAFT_ROWS: DraftRow[] = [
+  { no: 1, goal: '공감하기 → 도입으로 옮김', process: '정서', draft: '감정 알아차리기, 감정 몸 지도', final: '라포, 규칙 합의, 사전검사, 셀럽 카드', status: '수정' },
+  { no: 2, goal: '긍정적 관계 맺기', process: '동기', draft: '성장 일지, 성장 나무', final: '실뭉치 연결, 비폭력대화 4단계 부탁 문장, 수준별 역할극', status: '유지' },
+  { no: 3, goal: '책임있는 행동하기', process: '행동', draft: '행동 활성화 스케줄', final: '기여 행동 탐색, 파장 화살표, 2장면 역할극', status: '유지' },
+  { no: 4, goal: '자기 관리하기', process: '인지', draft: '관점 취하기, 인형극', final: 'NOW/FUTURE Brain, 실행지도 if-then, 뇌 배틀 4스테이션', status: '유지' },
+  { no: 5, goal: '정서 인식 및 조절하기', process: '자기', draft: '자기자비 명상, 나비 포옹', final: '풍선 배구, 신호 조건화, 무드미터, 나만의 암호 플랜', status: '유지' },
+  { no: 6, goal: '공감하기', process: '주의 → 정서', draft: '고통 감내 기술, 감정 응급처치 키트', final: '공감과 위로 구별, "그랬구나 ~했겠다" 반영 공식, 짝 나눔', status: '수정' },
+  { no: 7, goal: '긍정적 관계 맺기', process: '정서', draft: '감정 수용, 감정 파도 타기', final: '공통점 빙고, 우리 연결 지도, 소그룹 나눔', status: '유지' },
+  { no: 8, goal: '책임있는 행동하기', process: '동기', draft: '전념 행동 계획, 가치 히어로 미션', final: '내비게이션·핸들·안전벨트 심리교육, 협동 풍선 옮기기, 믿음의 안내자', status: '유지' },
+  { no: 9, goal: '공감하기', process: '행동', draft: '이완 훈련, 동물 비유', final: '공감의 3구조, 입꼬리 실험, 의자뺏기 공감게임, 공감 카드', status: '유지' },
+  { no: 10, goal: '긍정적 관계 맺기', process: '인지', draft: '오감 접지 기법', final: '관계 자동사고 재구성, 셀럽 성장 지도, 관계 한 줄 편지, 사후검사', status: '유지' },
+];
+
+const SOURCES = [
+  '사회정서역량 5요인 (CASEL, 2020)',
+  '변화과정 6차원 EEMM (Hayes & Hofmann, 2018)',
+  '성격강점 카드 (VIA)',
+  '구현의도 if-then (Gollwitzer, 1999)',
+  '인지 재구조화 (Beck, 1976)',
+  '정서 명명 (Lieberman 등, 2007)',
+  '고통 감내 TIPP (Linehan, 1993)',
+  '비폭력대화 4단계 부탁 (Rosenberg, 2003)',
+  '기여 행동과 공동체감 (Adler 개인심리학)',
+  '각성 수준·전전두 기능 (Arnsten, 2015)',
+  '회고 슬라이드 설계 (Tulving, 1972)',
+];
+
 const PRINCIPLES = [
   { title: '① 체험 먼저, 이해 나중', text: '일반 학급용은 심리교육으로 개념을 먼저 준다. 여기서는 순서를 뒤집어 몸으로 먼저 겪게 하고 그 경험을 이론과 연결했다. 각성 상태에서는 인지적 설명이 흡수되지 않기 때문이다(Arnsten, 2015). 5회기가 대표적이다. 풍선 배구로 몸을 올린 뒤 신호로 진정을 경험하게 하고, 그다음에 "방금 한 게 정서 인식이고 정서 조절"이라고 이름 붙였다.' },
   { title: '② 활동을 짧게 끊고 몸을 움직인다', text: '한 활동을 길게 끌지 않고 3~4분 단위로 끊어 이동을 넣었다. 4회기 뇌 배틀 스테이션은 교실 네 귀퉁이에 자기 관리 하위문항에 대응하는 과제를 배치하고 순환하게 한 구조다. 이동 자체가 전환 신호가 되고, 과제별 성공 기준을 낮춰 완수 경험을 확보했다.' },
@@ -103,6 +139,98 @@ export default function WavePage() {
                     성글다. 일부 아동 사이에 이전 학년 갈등 이력이 있어 짝 구성에 제약이 있었고
                     결석 변동도 컸다.
                   </span>
+                </div>
+              </>
+            ),
+          },
+          {
+            label: '초안 vs 확정안',
+            content: (
+              <>
+                <p>골격은 거의 그대로 갔고, 내용은 전부 다시 짰다.</p>
+                <div className="stat-row">
+                  <div className="stat-card">
+                    <span className="stat-value">9 / 10</span>
+                    <span className="stat-label">배치를 그대로 둔 회기</span>
+                  </div>
+                  <div className="stat-card">
+                    <span className="stat-value">2</span>
+                    <span className="stat-label">배치를 고친 회기 (1·6회기)</span>
+                  </div>
+                  <div className="stat-card">
+                    <span className="stat-value">10 / 10</span>
+                    <span className="stat-label">기법과 활동을 다시 짠 회기</span>
+                  </div>
+                </div>
+                <div className="table-scroll">
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th>회기</th>
+                        <th>목표 역량</th>
+                        <th>과정</th>
+                        <th>초안 기법</th>
+                        <th>확정 활동</th>
+                        <th>배치</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {DRAFT_ROWS.map((r) => (
+                        <tr key={r.no}>
+                          <td className="n">{r.no}</td>
+                          <td>{r.goal}</td>
+                          <td>{r.process}</td>
+                          <td>{r.draft}</td>
+                          <td>{r.final}</td>
+                          <td>
+                            <span
+                              className="keyword-chip keyword-chip--small"
+                              style={
+                                r.status === '수정'
+                                  ? { background: '#ffe1da', color: '#c4503c' }
+                                  : { background: '#dff5e2', color: '#2c7a45' }
+                              }
+                            >
+                              {r.status}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="box-grid">
+                  <div className="info-box info-box--coral">
+                    <h4>1회기를 옮긴 이유</h4>
+                    <p>초안은 첫 시간부터 본 활동을 배치했다. 사전검사 실시와 라포 형성이 먼저여서 도입 회기로 옮겼다.</p>
+                  </div>
+                  <div className="info-box info-box--coral">
+                    <h4>6회기 과정을 바꾼 이유</h4>
+                    <p>초안은 공감하기를 주의 과정으로 잡아 고통 감내를 배정했다. 고통 감내는 5회기에서 이미 신체 조절로 다뤘고, 공감에 필요한 것은 타인 정서의 인식과 반영이라 정서 과정으로 바꿨다.</p>
+                  </div>
+                </div>
+                <div className="fun-note">
+                  <span className="fun-note-icon">💡</span>
+                  <span>
+                    <b>기법을 전부 갈아엎은 이유.</b> 초안 기법 상당수가 개인 상담이나 조용한
+                    학급을 전제했다. 감정 몸 지도, 인형극, 자기자비 명상, 이완 훈련 같은 것들이다.
+                    주의력 어려움이 있는 아동이 다수인 7명 소집단에 그대로 쓸 수 없었다.
+                  </span>
+                </div>
+              </>
+            ),
+          },
+          {
+            label: '기법의 출처',
+            content: (
+              <>
+                <p>계룡보건소 회기에 쓰인 기법들의 임상·이론 근거다.</p>
+                <div className="keyword-chip-row">
+                  {SOURCES.map((s) => (
+                    <span className="keyword-chip" key={s}>
+                      {s}
+                    </span>
+                  ))}
                 </div>
               </>
             ),

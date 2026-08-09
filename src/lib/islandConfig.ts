@@ -1,14 +1,14 @@
 export type IslandId =
   | 'intro'
-  | 'departure'
   | 'compass'
   | 'matrix'
   | 'lighthouse'
-  | 'fork'
-  | 'yangchon'
-  | 'wave'
-  | 'root'
   | 'progress'
+  | 'yangchon'
+  | 'yeonmu'
+  | 'wave'
+  | 'results'
+  | 'root'
   | 'limitations';
 
 export interface IslandConfig {
@@ -19,15 +19,15 @@ export interface IslandConfig {
 }
 
 export const ISLANDS: IslandConfig[] = [
-  { id: 'intro', mapPosition: [28.1, 19.3], label: '바다 소개' },
-  { id: 'yangchon', mapPosition: [24.2, 50.6], label: '양촌초 프로그램' },
-  { id: 'wave', mapPosition: [77.0, 19.3], label: '계룡보건소 프로그램' },
-  { id: 'limitations', mapPosition: [78.1, 51.9], label: '한계 및 보완점' },
-  { id: 'departure', mapPosition: [12.5, 35.3], label: '연구의 시작' },
+  { id: 'intro', mapPosition: [50.8, 63.8], label: '연구 시작 및 바다 소개' },
+  { id: 'compass', mapPosition: [24.2, 50.6], label: '설계 원리' },
+  { id: 'matrix', mapPosition: [12.5, 35.3], label: '개입 기법 매트릭스' },
+  { id: 'lighthouse', mapPosition: [28.1, 19.3], label: 'AI 설계 절차' },
   { id: 'progress', mapPosition: [32.8, 33.2], label: '바다 진행 상황' },
-  { id: 'compass', mapPosition: [52.3, 33.9], label: '설계 원리' },
-  { id: 'lighthouse', mapPosition: [50.8, 63.8], label: 'AI 설계 절차' },
-  { id: 'fork', mapPosition: [68.8, 35.3], label: '맞춤형 결과 비교' },
-  { id: 'root', mapPosition: [62.1, 15.8], label: '기법의 출처' },
-  { id: 'matrix', mapPosition: [89.1, 35.3], label: '개입 기법 매트릭스' },
+  { id: 'yangchon', mapPosition: [52.3, 33.9], label: '양촌초 프로그램' },
+  { id: 'yeonmu', mapPosition: [78.1, 51.9], label: '연무초 프로그램' },
+  { id: 'wave', mapPosition: [89.1, 35.3], label: '계룡보건소 프로그램' },
+  { id: 'results', mapPosition: [77.0, 19.3], label: '집단 결과 비교 및 통계' },
+  { id: 'root', mapPosition: [68.8, 35.3], label: '기법의 출처' },
+  { id: 'limitations', mapPosition: [62.1, 15.8], label: '한계 및 보완점' },
 ];

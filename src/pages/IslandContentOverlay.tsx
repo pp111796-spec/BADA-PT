@@ -3,29 +3,29 @@ import { useSceneStore } from '../store/useSceneStore';
 import type { IslandId } from '../lib/islandConfig';
 import ReturnButton from '../components/ReturnButton';
 import IntroPage from './islands/IntroPage';
-import DeparturePage from './islands/DeparturePage';
 import CompassPage from './islands/CompassPage';
 import MatrixPage from './islands/MatrixPage';
 import LighthousePage from './islands/LighthousePage';
-import ForkPage from './islands/ForkPage';
-import YangchonPage from './islands/YangchonPage';
-import WavePage from './islands/WavePage';
-import RootPage from './islands/RootPage';
 import ProgressPage from './islands/ProgressPage';
+import YangchonPage from './islands/YangchonPage';
+import YeonmuPage from './islands/YeonmuPage';
+import WavePage from './islands/WavePage';
+import ResultsPage from './islands/ResultsPage';
+import RootPage from './islands/RootPage';
 import LimitationsPage from './islands/LimitationsPage';
 import './IslandContentOverlay.css';
 
 const PAGE_MAP: Record<IslandId, ComponentType> = {
   intro: IntroPage,
-  departure: DeparturePage,
   compass: CompassPage,
   matrix: MatrixPage,
   lighthouse: LighthousePage,
-  fork: ForkPage,
-  yangchon: YangchonPage,
-  wave: WavePage,
-  root: RootPage,
   progress: ProgressPage,
+  yangchon: YangchonPage,
+  yeonmu: YeonmuPage,
+  wave: WavePage,
+  results: ResultsPage,
+  root: RootPage,
   limitations: LimitationsPage,
 };
 
