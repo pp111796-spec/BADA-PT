@@ -34,6 +34,6 @@ export const ISLANDS: IslandConfig[] = [
 /** 화면 우하단 반짝이는 별 위 마커 — 익명 게시판으로 연결 */
 export const BOARD_MARKER: IslandConfig = {
   id: 'board',
-  mapPosition: [92.5, 83.5],
+  mapPosition: [90.9, 85.1],
   label: '익명 게시판',
 };
