@@ -35,8 +35,7 @@ export default function BoardPage() {
       <div className="warn-note">
         <span className="warn-note-icon">⚠️</span>
         <span>
-          여기 남기신 글은 <b>접속한 모든 분에게 실시간으로 공유</b>됩니다. 임시 저장소를 사용하기
-          때문에 글은 24시간이 지나면 자동으로 사라집니다.
+          여기 남기신 글은 <b>접속한 모든 분에게 실시간으로 공유</b>됩니다.
         </span>
       </div>
 
