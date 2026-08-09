@@ -635,3 +635,102 @@
   color: #4b5563;
   line-height: 1.5;
 }
+
+/* 참여 집단 카드 */
+.participant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 10px 0 4px;
+}
+
+@media (max-width: 560px) {
+  .participant-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.participant-card {
+  border: 1px solid #ede3ce;
+  border-top: 4px solid #1f2937;
+  border-radius: 12px;
+  padding: 16px 16px 18px;
+  background: #fff;
+}
+
+.participant-card.accent-yes {
+  border-top-color: #2c7a45;
+}
+
+.participant-card.accent-none {
+  border-top-color: #9ca3af;
+}
+
+.participant-card.accent-watch {
+  border-top-color: #a8791a;
+}
+
+.participant-n {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.participant-n span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8f9c93;
+  margin-left: 2px;
+}
+
+.participant-name {
+  font-weight: 700;
+  font-size: 14.5px;
+  margin: 8px 0 1px;
+}
+
+.participant-sub {
+  font-size: 11px;
+  color: #8f9c93;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.participant-desc {
+  font-size: 12.5px;
+  color: #4b5563;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* 접이식 상세 표 */
+.detail-block {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.detail-block summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #1f2937;
+  list-style: none;
+}
+
+.detail-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-block summary::before {
+  content: '+ ';
+  color: #9ca3af;
+}
+
+.detail-block[open] summary::before {
+  content: '− ';
+}
+
+.detail-block .detail-inner {
+  padding-top: 10px;
+}
