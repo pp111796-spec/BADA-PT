@@ -12,7 +12,7 @@ const DOMAINS = [
 export default function IntroPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">BADA란?</p>
+      <p className="page-eyebrow">STEP 1 · 연구 시작 및 바다 소개</p>
       <h1>아이는 여섯 영역이 맞물려 자란다</h1>
       <p className="page-lead">
         인지, 사회성, 정서, 생활습관, 진로발달, 신체는 따로 떨어져 있지 않다. BADA는 이

@@ -25,7 +25,7 @@ const SOURCES: SourceRow[] = [
 export default function RootPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">STEP 8 · 기법의 출처</p>
+      <p className="page-eyebrow">STEP 10 · 기법의 출처</p>
       <h1>기법마다 어디서 왔는지</h1>
       <p className="page-lead">놀이 모음이 아니라 임상 기법 기반이라는 점은 이 표로 답한다.</p>
 

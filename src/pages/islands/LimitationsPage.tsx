@@ -12,7 +12,7 @@ const EXTRA_IDEAS = ['행동기반 평가 요소', '고위험군 특화 프로�
 export default function LimitationsPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">한계 및 보완점</p>
+      <p className="page-eyebrow">STEP 11 · 한계 및 보완점</p>
       <h1>한계점 & 다음 스텝</h1>
       <p className="page-lead">더 나은 BADA를 만들려고 한계를 솔직하게 짚고, 다음 계획도 같이 적었다.</p>
 

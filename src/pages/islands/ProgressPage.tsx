@@ -33,7 +33,7 @@ const OPERATION_STEPS = [
 export default function ProgressPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">바다 진행 상황</p>
+      <p className="page-eyebrow">STEP 5 · 바다 진행 상황</p>
       <h1>셀럽(SEL-UP) 프로그램</h1>
       <p className="page-lead">
         기존 사회정서학습이 놓친 아이들을 위해, 생성형 AI를 활용해 만든 맞춤형 프로그램이다.

@@ -31,7 +31,7 @@ const PHASES = [
 export default function YeonmuPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">STEP · 연무초 프로그램</p>
+      <p className="page-eyebrow">STEP 7 · 연무초 프로그램</p>
       <h1>연무초 늘봄, 비교집단</h1>
       <p className="page-lead">
         같은 회기 수·시간으로 운영한 고정형 사회정서학습 "마음 레벨업". 셀럽과 달리 사전

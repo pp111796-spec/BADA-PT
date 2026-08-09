@@ -69,7 +69,7 @@ const PRINCIPLES = [
 export default function WavePage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">STEP 7 · 계룡보건소 프로그램</p>
+      <p className="page-eyebrow">STEP 8 · 계룡보건소 프로그램</p>
       <h1>계룡보건소 정서행동 고위험집단</h1>
       <p className="page-lead">
         취약 영역이 공감하기와 긍정적 관계 맺기로 잡혀, 양촌과 순서도 기법도 다르게 갔다.

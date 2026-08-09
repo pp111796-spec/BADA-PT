@@ -30,7 +30,7 @@ function Flag({ kind, children }: { kind: FlagKind; children: ReactNode }) {
 export default function ResultsPage() {
   return (
     <article className="island-page">
-      <p className="page-eyebrow">집단 결과 비교 및 통계</p>
+      <p className="page-eyebrow">STEP 9 · 집단 결과 비교 및 통계</p>
       <h1>같은 절차, 다른 집단, 다른 결과</h1>
       <p className="page-lead">맞춤이라는 말이 수사인지 아닌지는 여기서 판가름 난다.</p>
 
