@@ -8,7 +8,8 @@ export type IslandId =
   | 'yeonmu'
   | 'wave'
   | 'results'
-  | 'limitations';
+  | 'limitations'
+  | 'board';
 
 export interface IslandConfig {
   id: IslandId;
@@ -29,3 +30,10 @@ export const ISLANDS: IslandConfig[] = [
   { id: 'results', mapPosition: [77.0, 19.3], label: '집단 결과 비교 및 통계' },
   { id: 'limitations', mapPosition: [68.8, 35.3], label: '한계 및 보완점' },
 ];
+
+/** 화면 우하단 반짝이는 별 위 마커 — 익명 게시판으로 연결 */
+export const BOARD_MARKER: IslandConfig = {
+  id: 'board',
+  mapPosition: [94.9, 83.5],
+  label: '💬 익명 게시판',
+};

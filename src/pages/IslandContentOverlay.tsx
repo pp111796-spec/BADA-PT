@@ -12,6 +12,7 @@ import YeonmuPage from './islands/YeonmuPage';
 import WavePage from './islands/WavePage';
 import ResultsPage from './islands/ResultsPage';
 import LimitationsPage from './islands/LimitationsPage';
+import BoardPage from './islands/BoardPage';
 import './IslandContentOverlay.css';
 
 const PAGE_MAP: Record<IslandId, ComponentType> = {
@@ -25,6 +26,7 @@ const PAGE_MAP: Record<IslandId, ComponentType> = {
   wave: WavePage,
   results: ResultsPage,
   limitations: LimitationsPage,
+  board: BoardPage,
 };
 
 export default function IslandContentOverlay() {

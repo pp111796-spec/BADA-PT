@@ -1,4 +1,4 @@
-import { ISLANDS } from '../../lib/islandConfig';
+import { BOARD_MARKER, ISLANDS } from '../../lib/islandConfig';
 import { useSceneStore } from '../../store/useSceneStore';
 import './IslandMap.css';
 
@@ -32,6 +32,15 @@ export default function IslandMap() {
           {island.label}
         </button>
       ))}
+
+      <button
+        key={BOARD_MARKER.id}
+        className="map-tag map-tag--board"
+        style={{ left: `${BOARD_MARKER.mapPosition[0]}%`, top: `${BOARD_MARKER.mapPosition[1]}%` }}
+        onClick={() => selectIsland(BOARD_MARKER.id)}
+      >
+        {BOARD_MARKER.label}
+      </button>
     </div>
   );
 }
