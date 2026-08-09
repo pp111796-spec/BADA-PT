@@ -1,11 +1,30 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { getPosts, type BoardPost } from '../../lib/boardStorage';
 import PostForm from '../../components/Board/PostForm';
 import PostList from '../../components/Board/PostList';
 
+const POLL_INTERVAL_MS = 4000;
+
 export default function BoardPage() {
-  const [posts, setPosts] = useState<BoardPost[]>(() => getPosts());
-  const refresh = useCallback(() => setPosts(getPosts()), []);
+  const [posts, setPosts] = useState<BoardPost[]>([]);
+  const [loadError, setLoadError] = useState(false);
+  const loadedOnce = useRef(false);
+
+  const refresh = useCallback(() => {
+    getPosts()
+      .then((next) => {
+        setPosts(next);
+        setLoadError(false);
+        loadedOnce.current = true;
+      })
+      .catch(() => setLoadError(true));
+  }, []);
+
+  useEffect(() => {
+    refresh();
+    const timer = setInterval(refresh, POLL_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, [refresh]);
 
   return (
     <article className="island-page">
@@ -16,10 +35,14 @@ export default function BoardPage() {
       <div className="warn-note">
         <span className="warn-note-icon">⚠️</span>
         <span>
-          <b>지금은 이 브라우저에만 저장된다.</b> 다른 사람 화면에는 보이지 않는 로컬 데모
-          상태다. 모두가 같은 글을 보게 하려면 무료 공유 저장소 연결이 필요하다.
+          여기 남긴 글은 <b>접속한 모든 사람에게 실시간으로 공유</b>된다. 임시 저장소를 쓰기 때문에
+          글은 24시간이 지나면 자동으로 사라진다.
         </span>
       </div>
+
+      {loadError && loadedOnce.current && (
+        <p className="board-empty">최신 글을 불러오지 못했어요. 잠시 후 자동으로 다시 시도합니다.</p>
+      )}
 
       <PostForm onPosted={refresh} />
       <PostList posts={posts} onChanged={refresh} />

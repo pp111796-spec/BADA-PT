@@ -3,14 +3,24 @@ import { addPost } from '../../lib/boardStorage';
 
 export default function PostForm({ onPosted }: { onPosted: () => void }) {
   const [content, setContent] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const trimmed = content.trim();
-    if (!trimmed) return;
-    addPost(trimmed);
-    setContent('');
-    onPosted();
+    if (!trimmed || submitting) return;
+    setSubmitting(true);
+    setError(false);
+    try {
+      await addPost(trimmed);
+      setContent('');
+      onPosted();
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -22,8 +32,9 @@ export default function PostForm({ onPosted }: { onPosted: () => void }) {
         maxLength={500}
         rows={3}
       />
-      <button type="submit" disabled={!content.trim()}>
-        등록
+      {error && <p className="post-form-error">전송에 실패했어요. 다시 시도해 주세요.</p>}
+      <button type="submit" disabled={!content.trim() || submitting}>
+        {submitting ? '등록 중…' : '등록'}
       </button>
     </form>
   );

@@ -26,8 +26,7 @@ export default function PostItem({ post, onChanged }: PostItemProps) {
           <button
             className="post-delete"
             onClick={() => {
-              deletePost(post.id);
-              onChanged();
+              deletePost(post.id).then(onChanged);
             }}
           >
             삭제

@@ -69,6 +69,12 @@
   cursor: not-allowed;
 }
 
+.post-form-error {
+  margin: 0;
+  color: #ef4444;
+  font-size: 13px;
+}
+
 .board-empty {
   color: #9ca3af;
   text-align: center;
