@@ -2,9 +2,10 @@ export default function CompassPage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 2 · 설계 원리</p>
-      <h1>역량은 목표, 과정은 경로</h1>
+      <h1>사회정서역량 × 변화과정</h1>
       <p className="page-lead">
-        무엇을 올릴지는 사회정서역량이 정하고, 어디를 건드릴지는 변화과정이 정한다.
+        사회정서역량은 회기에서 다룰 내용을, 변화과정은 그 내용을 어떤 방식으로 다룰지를
+        정한다.
       </p>
 
       <div className="box-grid">

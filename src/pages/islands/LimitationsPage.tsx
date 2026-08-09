@@ -13,8 +13,8 @@ export default function LimitationsPage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 10 · 한계 및 보완점</p>
-      <h1>한계점 & 다음 스텝</h1>
-      <p className="page-lead">더 나은 BADA를 만들려고 한계를 솔직하게 짚고, 다음 계획도 같이 적었다.</p>
+      <h1>한계점과 다음 계획</h1>
+      <p className="page-lead">현재 한계 네 가지와 각각의 다음 계획을 정리했다.</p>
 
       <IslandTabs
         tabs={[

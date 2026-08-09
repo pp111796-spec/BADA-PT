@@ -13,10 +13,10 @@ export default function IntroPage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 1 · 연구 시작 및 바다 소개</p>
-      <h1>아이는 여섯 영역이 맞물려 자란다</h1>
+      <h1>BADA: 여섯 영역 통합 연구</h1>
       <p className="page-lead">
-        인지, 사회성, 정서, 생활습관, 진로발달, 신체는 따로 떨어져 있지 않다. BADA는 이
-        여섯 가지를 하나로 보고, 아이가 건강하게 클 수 있도록 돕는 연구다.
+        인지, 사회성, 정서, 생활습관, 진로발달, 신체 여섯 영역을 통합적으로 다뤄 아동
+        발달을 지원하는 연구다.
       </p>
 
       <IslandTabs
@@ -85,7 +85,7 @@ export default function IntroPage() {
             label: '왜 맞춤이어야 했나',
             content: (
               <>
-                <h3>보편 프로그램이 남기는 자리</h3>
+                <h3>보편 프로그램의 한계</h3>
                 <div className="box-grid">
                   <div className="info-box info-box--leaf">
                     <h4>이미 확인된 것</h4>

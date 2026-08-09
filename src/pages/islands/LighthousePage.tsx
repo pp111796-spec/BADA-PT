@@ -13,8 +13,8 @@ export default function LighthousePage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 4 · AI 설계 절차</p>
-      <h1>무엇을 넣으면 무엇이 나오는가</h1>
-      <p className="page-lead">입력은 개인 데이터가 아니라 집단 통계다. 아이들은 시스템을 만나지 않는다.</p>
+      <h1>BADA SESSION 절차</h1>
+      <p className="page-lead">입력은 개인 데이터가 아니라 집단 통계다. 아동은 이 시스템을 직접 쓰지 않는다.</p>
 
       <IslandTabs
         tabs={[

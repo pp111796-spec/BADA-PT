@@ -80,7 +80,7 @@ export default function MatrixPage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 3 · 개입 기법 매트릭스</p>
-      <h1>기법을 떠올리지 않고 셀을 찾아 들어간다</h1>
+      <h1>30셀 개입 행렬</h1>
       <p className="page-lead">
         5요인을 열, 6과정을 행으로 둔 30개 교차 셀. 각 셀은 문제 1개와 기법 3개로 이루어진
         코드북이다.

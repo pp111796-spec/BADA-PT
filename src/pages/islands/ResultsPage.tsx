@@ -31,8 +31,8 @@ export default function ResultsPage() {
   return (
     <article className="island-page">
       <p className="page-eyebrow">STEP 9 · 집단 결과 비교 및 통계</p>
-      <h1>같은 절차, 다른 집단, 다른 결과</h1>
-      <p className="page-lead">맞춤이라는 말이 수사인지 아닌지는 여기서 판가름 난다.</p>
+      <h1>집단별 결과 비교</h1>
+      <p className="page-lead">양촌초, 연무초, 계룡보건소 세 집단의 사전·사후 결과를 비교했다.</p>
 
       <IslandTabs
         tabs={[
