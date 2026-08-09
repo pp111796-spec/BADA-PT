@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSceneStore } from '../../store/useSceneStore';
 import { INTRO_VIDEO_SRC } from '../../lib/constants';
 import './IntroVideo.css';
@@ -8,6 +8,10 @@ export default function IntroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
   const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    fetch('/videos/island-loop.mp4').catch(() => {});
+  }, []);
 
   const toggleSound = () => {
     setMuted((prev) => {
