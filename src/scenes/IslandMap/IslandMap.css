@@ -43,8 +43,10 @@
   color: #fff;
   line-height: 1.4;
   letter-spacing: 0;
-  -webkit-text-stroke: 5px rgba(0, 0, 0, 0.75);
-  paint-order: stroke fill;
+  text-shadow:
+    0 0 8px rgba(255, 255, 0, 0.5),
+    0 0 16px rgba(255, 255, 0, 0.3),
+    0 0 24px rgba(255, 200, 0, 0.2);
 }
 
 .map-header-title em {
