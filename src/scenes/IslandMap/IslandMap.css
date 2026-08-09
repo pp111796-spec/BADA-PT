@@ -3,7 +3,7 @@
   inset: 0;
   overflow: hidden;
   background: #1a6fa0;
-  animation: map-fade-in 0.5s ease;
+  animation: map-fade-in 0.25s ease;
 }
 
 @keyframes map-fade-in {
@@ -43,6 +43,8 @@
   color: #fff;
   line-height: 1.4;
   letter-spacing: 0;
+  -webkit-text-stroke: 5px rgba(0, 0, 0, 0.75);
+  paint-order: stroke fill;
   text-shadow:
     0 0 8px rgba(255, 255, 0, 0.5),
     0 0 16px rgba(255, 255, 0, 0.3),
@@ -78,7 +80,7 @@
   transition: transform 0.18s cubic-bezier(0.3, 1.4, 0.5, 1), background 0.15s;
   opacity: 0;
   transform: scale(0.3);
-  animation: tag-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: tag-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 @keyframes tag-pop {

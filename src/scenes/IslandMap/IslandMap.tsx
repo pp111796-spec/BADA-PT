@@ -4,8 +4,8 @@ import { useSceneStore } from '../../store/useSceneStore';
 import { getVisitedIslands, markIslandVisited } from '../../lib/visitedIslands';
 import './IslandMap.css';
 
-const POP_BASE_DELAY = 0.05;
-const POP_STAGGER = 0.07;
+const POP_BASE_DELAY = 0.02;
+const POP_STAGGER = 0.025;
 
 export default function IslandMap() {
   const selectIsland = useSceneStore((s) => s.selectIsland);
