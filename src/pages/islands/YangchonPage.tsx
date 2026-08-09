@@ -85,7 +85,7 @@ export default function YangchonPage() {
                 <div className="box-grid">
                   <div className="info-box">
                     <h4>진행 인력</h4>
-                    <p>대학원생 2명이 학년별로 순차 진행하고(동시 아님), 학부생 보조 2명이 두 학년 회기에 모두 참여했다. 회기당 주진행 1명에 보조 2명이다.</p>
+                    <p>대학원생 2명이 학년별로 순차 진행하고(동시 아님), 학부생 보조 3명이 두 학년 회기에 모두 참여했다. 회기당 주진행 1명에 보조 4명(대학원생 1명, 학부생 3명)이다.</p>
                   </div>
                   <div className="info-box">
                     <h4>게임화 프레임</h4>

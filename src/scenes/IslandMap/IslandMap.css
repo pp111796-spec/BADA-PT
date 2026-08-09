@@ -37,8 +37,9 @@
 
 .map-header-title {
   margin: 0;
-  font-size: 22px;
-  font-weight: 800;
+  font-family: 'Jua', system-ui, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
   color: #fff;
   line-height: 1.25;
   text-shadow: 0 3px 0 rgba(26, 111, 160, 0.35), 0 0 18px rgba(255, 255, 255, 0.35);
