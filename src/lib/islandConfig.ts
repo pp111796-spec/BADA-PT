@@ -35,5 +35,5 @@ export const ISLANDS: IslandConfig[] = [
 export const BOARD_MARKER: IslandConfig = {
   id: 'board',
   mapPosition: [94.1, 81.9],
-  label: '익명게시판',
+  label: '익명 게시판',
 };
