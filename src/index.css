@@ -1,0 +1,33 @@
+:root {
+  --text: #1f2937;
+  --text-light: #f5f7fa;
+  --accent: #2d7fb8;
+  --overlay-bg: rgba(8, 20, 30, 0.55);
+  --card-bg: rgba(255, 255, 255, 0.92);
+
+  font: 16px/1.5 system-ui, 'Segoe UI', 'Malgun Gothic', Roboto, sans-serif;
+  color-scheme: light;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}

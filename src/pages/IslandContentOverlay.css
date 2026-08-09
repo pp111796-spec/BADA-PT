@@ -1,0 +1,637 @@
+.content-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 20px 30px;
+  background: rgba(4, 14, 24, 0.78);
+  backdrop-filter: blur(3px);
+  animation: overlay-fade-in 0.25s ease;
+}
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-overlay-inner {
+  width: 100%;
+  max-width: 860px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  animation: modal-pop-in 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes modal-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.island-page {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+}
+
+.island-page--narrow {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.page-eyebrow {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.island-page h1 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+.page-lead {
+  margin: 0 0 28px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sub-section {
+  margin-bottom: 28px;
+}
+
+.sub-section:last-child {
+  margin-bottom: 0;
+}
+
+.sub-section h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+/* 키워드 카드 그리드 (바다 소개) */
+.keyword-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.keyword-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #eef6fb, #dff0f8);
+  border: 1px solid #d5e8f2;
+}
+
+.keyword-icon {
+  font-size: 28px;
+}
+
+.keyword-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* 키워드 칩 */
+.keyword-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword-chip {
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.keyword-chip--small {
+  padding: 5px 11px;
+  font-size: 12.5px;
+}
+
+.keyword-chip-row--small {
+  margin-top: 10px;
+}
+
+/* 설계 원리 조합 */
+.combo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.combo-chip {
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #374151;
+}
+
+.combo-chip--accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.combo-x {
+  font-size: 18px;
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+/* 회기 타임라인 */
+.session-timeline {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.session-chip {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 84px;
+  padding: 12px 10px;
+  border-radius: 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.session-no {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.session-competency {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.3;
+}
+
+.session-pbt {
+  font-size: 11px;
+  color: var(--accent);
+  background: #eef2ff;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+/* 운영 방식 스텝 플로우 */
+.step-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-icon {
+  font-size: 18px;
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+.step-arrow {
+  color: #9ca3af;
+  font-weight: 700;
+  margin: 0 2px;
+}
+
+/* 한계점 카드 */
+.limitation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.limitation-card {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.limitation-index {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.limitation-body h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.limitation-body p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.feature-icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.feature-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 6px 12px 6px 8px;
+}
+
+.feature-icon {
+  font-size: 16px;
+}
+
+.feature-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* 미니 카드 (원칙/역할/비교 등 짧은 설명 카드) */
+.mini-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mini-card {
+  flex: 1;
+  min-width: 180px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.mini-card-title {
+  display: block;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.mini-card-text {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* 통계 강조 카드 */
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 8px 0 4px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px 20px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* 재미 포인트 콜아웃 */
+.fun-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #fff7de;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  margin: 18px 0;
+  font-size: 13.5px;
+  color: #6a5b2e;
+  line-height: 1.6;
+}
+
+.fun-note-icon {
+  font-size: 18px;
+  flex: none;
+}
+
+/* 압축 매트릭스 표 (보물지도섬) */
+.table-scroll {
+  overflow-x: auto;
+  margin: 4px 0 16px;
+}
+
+.mini-matrix {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.mini-matrix th,
+.mini-matrix td {
+  border: 1px solid #e5e7eb;
+  padding: 7px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.mini-matrix thead th {
+  background: #f3f4f6;
+  font-size: 10.5px;
+  color: #374151;
+}
+
+.mini-matrix tbody th {
+  background: #eef2ff;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.mini-matrix td.diag {
+  background: #fff3cf;
+  font-weight: 700;
+}
+
+.mini-matrix b {
+  display: block;
+  color: #1f2937;
+}
+
+.mini-matrix span {
+  display: block;
+  font-size: 9.5px;
+  color: #8f9c93;
+  margin-top: 2px;
+  white-space: normal;
+}
+
+/* 탭 */
+.island-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.island-tab-btn {
+  border: none;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.island-tab-btn.active {
+  background: #1f2937;
+  color: #fff;
+}
+
+/* 섹션 소제목(h3 수준) */
+.island-page h3 {
+  font-size: 15px;
+  color: var(--accent);
+  margin: 22px 0 10px;
+}
+
+.island-page h3:first-child {
+  margin-top: 0;
+}
+
+/* 색상 정보 박스 */
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 10px 0 6px;
+}
+
+@media (max-width: 560px) {
+  .box-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-box {
+  background: #fff;
+  border: 2px solid #ede3ce;
+  border-radius: 16px;
+  padding: 15px 17px;
+}
+
+.info-box h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #1f2937;
+}
+
+.info-box p,
+.info-box li {
+  font-size: 13.5px;
+  color: #4b5563;
+  margin-bottom: 5px;
+  line-height: 1.55;
+}
+
+.info-box ul {
+  padding-left: 18px;
+  margin: 4px 0;
+}
+
+.info-box--sea {
+  border-color: #b6e4f2;
+  background: #f4fcff;
+}
+
+.info-box--sun {
+  border-color: #f7dfa0;
+  background: #fffbf0;
+}
+
+.info-box--coral {
+  border-color: #ffcdc4;
+  background: #fff6f4;
+}
+
+.info-box--leaf {
+  border-color: #c4eec6;
+  background: #f5fdf5;
+}
+
+/* 팁 / 경고 콜아웃 */
+.warn-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #fff1ee;
+  border-left: 4px solid #ff7e6b;
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #8c4b3f;
+  line-height: 1.6;
+}
+
+.warn-note-icon {
+  font-size: 18px;
+  flex: none;
+}
+
+.strike {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+/* 상세 데이터 표 */
+.data-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin: 10px 0 16px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  background: #f3f4f6;
+  font-size: 12px;
+  color: #374151;
+}
+
+.data-table td.n {
+  font-weight: 700;
+  color: var(--accent);
+  width: 36px;
+}
+
+/* 파이프라인 스텝 카드 (등대섬) */
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 4px;
+}
+
+.pipeline-step {
+  flex: 1;
+  min-width: 140px;
+  background: #fff;
+  border: 2px solid #ede3ce;
+  border-radius: 14px;
+  padding: 12px 13px;
+}
+
+.pipeline-step.accent {
+  border-color: #f7dfa0;
+  background: #fffbf0;
+}
+
+.pipeline-step b {
+  display: block;
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.pipeline-step span {
+  font-size: 12px;
+  color: #4b5563;
+  line-height: 1.5;
+}
