@@ -28,11 +28,11 @@ export default function PostForm({ onPosted }: { onPosted: () => void }) {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        placeholder="바다에 대한 의견을 익명으로 남겨보세요 (최대 500자)"
+        placeholder="바다에 대한 의견을 익명으로 남겨주세요 (최대 500자)"
         maxLength={500}
         rows={3}
       />
-      {error && <p className="post-form-error">전송에 실패했어요. 다시 시도해 주세요.</p>}
+      {error && <p className="post-form-error">전송에 실패했습니다. 다시 시도해 주세요.</p>}
       <button type="submit" disabled={!content.trim() || submitting}>
         {submitting ? '등록 중…' : '등록'}
       </button>

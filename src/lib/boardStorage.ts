@@ -39,10 +39,49 @@ export function getSessionToken(): string {
   return token;
 }
 
+const NICKNAME_ADJECTIVES = [
+  '신비로운',
+  '반짝이는',
+  '느긋한',
+  '용감한',
+  '엉뚱한',
+  '포근한',
+  '씩씩한',
+  '말랑한',
+  '수줍은',
+  '활기찬',
+  '조용한',
+  '엄청난',
+  '호기심많은',
+  '여유로운',
+  '통통튀는',
+];
+
+const NICKNAME_ANIMALS = [
+  '돌고래',
+  '거북이',
+  '불가사리',
+  '파도',
+  '산호초',
+  '갈매기',
+  '고래',
+  '해파리',
+  '조개',
+  '등대지기',
+  '섬여우',
+  '선장',
+  '항해사',
+  '무지개',
+  '오징어',
+];
+
 function getSessionLabel(): string {
   let label = localStorage.getItem(LABEL_KEY);
   if (!label) {
-    label = `익명${Math.floor(1000 + Math.random() * 9000)}`;
+    const adj = NICKNAME_ADJECTIVES[Math.floor(Math.random() * NICKNAME_ADJECTIVES.length)];
+    const animal = NICKNAME_ANIMALS[Math.floor(Math.random() * NICKNAME_ANIMALS.length)];
+    const num = Math.floor(10 + Math.random() * 90);
+    label = `${adj} ${animal} ${num}`;
     localStorage.setItem(LABEL_KEY, label);
   }
   return label;

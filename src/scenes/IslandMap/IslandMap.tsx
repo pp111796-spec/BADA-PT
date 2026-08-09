@@ -35,11 +35,13 @@ export default function IslandMap() {
 
       <button
         key={BOARD_MARKER.id}
-        className="map-tag map-tag--board"
+        className="map-star-button"
         style={{ left: `${BOARD_MARKER.mapPosition[0]}%`, top: `${BOARD_MARKER.mapPosition[1]}%` }}
         onClick={() => selectIsland(BOARD_MARKER.id)}
+        aria-label={BOARD_MARKER.label}
       >
-        {BOARD_MARKER.label}
+        <span className="map-star-halo" aria-hidden="true" />
+        <span className="map-star-label">{BOARD_MARKER.label}</span>
       </button>
     </div>
   );
