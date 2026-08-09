@@ -19,7 +19,7 @@ export interface IslandConfig {
 }
 
 export const ISLANDS: IslandConfig[] = [
-  { id: 'intro', mapPosition: [50.8, 63.8], label: '연구 시작 및 바다 소개' },
+  { id: 'intro', mapPosition: [50.8, 65.4], label: '연구 시작 및 바다 소개' },
   { id: 'compass', mapPosition: [24.2, 50.6], label: '설계 원리' },
   { id: 'matrix', mapPosition: [12.5, 35.3], label: '개입 기법 매트릭스' },
   { id: 'lighthouse', mapPosition: [28.1, 19.3], label: 'AI 설계 절차' },
@@ -34,6 +34,6 @@ export const ISLANDS: IslandConfig[] = [
 /** 화면 우하단 반짝이는 별 위 마커 — 익명 게시판으로 연결 */
 export const BOARD_MARKER: IslandConfig = {
   id: 'board',
-  mapPosition: [90.9, 86.7],
+  mapPosition: [90.9, 88.3],
   label: '익명 게시판',
 };

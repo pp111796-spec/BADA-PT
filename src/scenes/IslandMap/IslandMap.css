@@ -37,21 +37,32 @@
 
 .map-header-title {
   margin: 0;
-  font-family: 'Gugi', 'Malgun Gothic', sans-serif;
-  font-size: 30px;
+  font-family: 'Do Hyeon', 'Malgun Gothic', sans-serif;
+  font-size: 32px;
   font-weight: 400;
   color: #fff;
   line-height: 1.4;
   letter-spacing: 0;
   -webkit-text-stroke: 1px rgba(9, 38, 53, 0.5);
   paint-order: stroke fill;
-  text-shadow: 0 3px 0 rgba(10, 40, 55, 0.85), 0 8px 16px rgba(0, 0, 0, 0.4),
-    0 0 22px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  animation: title-reveal 1.6s ease-out 0.3s forwards;
+}
+
+@keyframes title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .map-header-title em {
   font-style: normal;
-  color: #ffc64d;
+  color: #4fc3f7;
 }
 
 .map-tag {
